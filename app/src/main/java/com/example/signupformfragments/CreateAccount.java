@@ -3,10 +3,15 @@ package com.example.signupformfragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.google.android.material.button.MaterialButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -15,9 +20,43 @@ import android.view.ViewGroup;
  */
 public class CreateAccount extends Fragment {
 
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_create_account, container, false);
+        MaterialButton createButton = (MaterialButton) view.findViewById(R.id.create_account);
+
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swapFragment();
+            }
+        });
+
+        // Inflate the layout for this fragment
+       // return inflater.inflate(R.layout.fragment_create_account, container, false);
+        //return the view
+        return view;
+    }
+
+
+    private void swapFragment(){
+        NameFragment nameFragment = NameFragment.newInstance();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_conatainer, nameFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
     public static CreateAccount newInstance(){
+
         return new CreateAccount();
     }
+
+
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,10 +98,5 @@ public class CreateAccount extends Fragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_account, container, false);
-    }
+
 }
