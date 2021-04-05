@@ -19,14 +19,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayFragment(){
-        CreateAccount createAccount = CreateAccount.newInstance();
-
-        // Get the FragmentManager and start a transaction.
+        EmailFragment emailFragment = EmailFragment.newInstance();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.add(R.id.fragment_conatainer,createAccount).addToBackStack(null).commit();
-
+        fragmentTransaction.add(R.id.fragment_container,emailFragment).addToBackStack(null).commit();
 
     }
 }

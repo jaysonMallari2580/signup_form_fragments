@@ -6,11 +6,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <FrameLayout
-        android:id="@+id/fragment_conatainer"
+        android:id="@+id/fragment_container"
         android:name="com.example.android.signupformfragments.CreateAccount"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:layout="@layout/fragment_create_account"
+        tools:layout="@layout/fragment_email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

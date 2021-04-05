@@ -20,8 +20,29 @@
     <string name="password">Password</string>
 
     <!--Well done -->
-    <string name="and_well_done">Well done! <br/>Sign up complete</string>
+    <string name="and_well_done">Well done! <br />Sign up complete</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>
+
+    <!-- Material design Fragments signup-->
+    <string name="my_email">My \nemail is</string>
+    <string name="my_continue">Continue</string>
+
+    <string name="my_first_name">My first\nname is</string>
+    <string name="my_first_name_hint">This is how it will appear in Tinder</string>
+    <string name="my_birthday_input_hint">M M/D D/Y Y Y Y</string>
+    <string name="my_first_birthday">Your age will be public</string>
+
+    <string name="my_birthday">My \nbirthday is</string>
+
+    <string name="my_iam">I am a</string>
+    <string name="woman">WOMAN</string>
+    <string name="man">MAN</string>
+    <string name="gender_hint">Show my gender on my profile</string>
+
+    <string name="my_school">My \nschool is</string>
+
+    <string name="school_name_hint">School Name</string>
+
 
 </resources>
