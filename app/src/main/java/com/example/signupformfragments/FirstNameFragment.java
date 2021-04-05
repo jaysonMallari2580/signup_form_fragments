@@ -2,6 +2,8 @@ package com.example.signupformfragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,53 +21,24 @@ import com.google.android.material.button.MaterialButton;
  */
 public class FirstNameFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FirstNameFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FirstNameFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FirstNameFragment newInstance(String param1, String param2) {
-        FirstNameFragment fragment = new FirstNameFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private MaterialButton button, backButton;
+    TextInputLayout nameInput;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_first_name,container,false);
-        MaterialButton button = view.findViewById(R.id.continue_button_my_name);
-        MaterialButton backButton = view.findViewById(R.id.back_button_my_first_name);
+        return inflater.inflate(R.layout.fragment_first_name,container,false);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        button = view.findViewById(R.id.continue_button_my_name);
+        backButton = view.findViewById(R.id.back_button_my_first_name);
+        nameInput = view.findViewById(R.id.firstName);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,12 +53,16 @@ public class FirstNameFragment extends Fragment {
                 getFragmentManager().popBackStack();
             }
         });
-        // Inflate the layout for this fragment
-        return view;
     }
 
     private void swapFragment(){
+        Bundle bundle = new Bundle();
+        bundle.putString(Constant.NAME,nameInput.getEditText().getText().toString());
+        bundle.putString(Constant.EMAIL, requireArguments().get(Constant.EMAIL).toString());
         BirthdayFragment birthdayFragment = BirthdayFragment.newInstance();
+        birthdayFragment.setArguments(bundle);
+
+
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container,birthdayFragment).addToBackStack(null).commit();
     }

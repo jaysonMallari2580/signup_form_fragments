@@ -71,12 +71,46 @@
             android:textSize="20sp"/>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/info"
+            android:id="@+id/info_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="@+id/location_icon"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/miles_away"
+            android:text="text"
+            android:layout_marginLeft="30dp"
+            android:textSize="30sp"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/info_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/location_icon"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/info_email"
+            android:text="text"
+            android:layout_marginLeft="30dp"
+            android:textSize="30sp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/info_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/location_icon"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/info_birthday"
+            android:text="text"
+            android:layout_marginLeft="30dp"
+            android:textSize="30sp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/info_school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/location_icon"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/info_gender"
             android:text="text"
             android:layout_marginLeft="30dp"
             android:textSize="30sp"/>

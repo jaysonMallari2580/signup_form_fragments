@@ -11,6 +11,7 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
 
+
     <!--email-->
     <string name="and_email">And, your email?</string>
     <string name="email">Email Address</string>
@@ -23,6 +24,8 @@
     <string name="and_well_done">Well done! <br />Sign up complete</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>
+    <string name="birthday_hint">Birthday</string>
+
 
     <!-- Material design Fragments signup-->
     <string name="my_email">My \nemail is</string>
