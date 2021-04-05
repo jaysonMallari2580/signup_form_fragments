@@ -3,10 +3,13 @@ package com.example.signupformfragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.button.MaterialButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,8 +61,33 @@ public class MySchoolFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_my_school,container,false);
+        MaterialButton buttonBack = view.findViewById(R.id.back_button_my_school);
+        MaterialButton buttonContinue = view.findViewById(R.id.continue_button_my_school);
+
+        buttonContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swapFragment();
+            }
+        });
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFragmentManager().popBackStack();
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_school, container, false);
+        return view;
+    }
+
+    public void swapFragment(){
+        ProfileFragment profileFragment = ProfileFragment.newInstance();
+        int fragmentTransaction = getFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container,profileFragment)
+                .addToBackStack(null).commit();
     }
 
     public static MySchoolFragment newInstance(){

@@ -64,11 +64,19 @@ public class FirstNameFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_first_name,container,false);
         MaterialButton button = view.findViewById(R.id.continue_button_my_name);
+        MaterialButton backButton = view.findViewById(R.id.back_button_my_first_name);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 swapFragment();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFragmentManager().popBackStack();
             }
         });
         // Inflate the layout for this fragment

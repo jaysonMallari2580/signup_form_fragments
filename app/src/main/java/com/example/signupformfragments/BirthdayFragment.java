@@ -64,6 +64,14 @@ public class BirthdayFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_birthday,container,false);
         MaterialButton button= view.findViewById(R.id.continue_button_my_birthday);
+        MaterialButton backButton = view.findViewById(R.id.back_button_my_birthday);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFragmentManager().popBackStack();
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

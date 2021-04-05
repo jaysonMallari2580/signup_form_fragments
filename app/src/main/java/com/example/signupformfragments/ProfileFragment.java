@@ -3,20 +3,17 @@ package com.example.signupformfragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.material.button.MaterialButton;
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link IamFragment#newInstance} factory method to
+ * Use the {@link ProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class IamFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +24,7 @@ public class IamFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public IamFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -37,11 +34,11 @@ public class IamFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment IamFragment.
+     * @return A new instance of fragment ProfileFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static IamFragment newInstance(String param1, String param2) {
-        IamFragment fragment = new IamFragment();
+    public static ProfileFragment newInstance(String param1, String param2) {
+        ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,36 +59,10 @@ public class IamFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_iam,container,false);
-        MaterialButton continueButton = view.findViewById(R.id.continue_button_my_iam);
-        MaterialButton backButton = view.findViewById(R.id.back_button_my_iam);
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getFragmentManager().popBackStack();
-            }
-        });
-
-        continueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                swapFragment();
-            }
-        });
-
-        return view;
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
-    public void swapFragment(){
-        MySchoolFragment mySchoolFragment = MySchoolFragment.newInstance();
-        int fragmentTransaction = getFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container,mySchoolFragment)
-                .addToBackStack(null)
-                .commit();
-    }
-
-    public static IamFragment newInstance(){
-        return new IamFragment();
+    public static ProfileFragment newInstance(){
+        return  new ProfileFragment();
     }
 }

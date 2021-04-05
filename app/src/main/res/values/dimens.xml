@@ -24,4 +24,9 @@
     <dimen name="back_icon">50dp</dimen>
     <dimen name="gender_margin">50dp</dimen>
 
+    <dimen name="profile_picture">410dp</dimen>
+    <dimen name="profile_textSize">50sp</dimen>
+    <dimen name="profile_name_margin">20dp</dimen>
+    <dimen name="profile_textSize_age">40sp</dimen>
+
 </resources>
