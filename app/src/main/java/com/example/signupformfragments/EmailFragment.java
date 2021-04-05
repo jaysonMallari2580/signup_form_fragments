@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputLayout;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +19,9 @@ import com.google.android.material.button.MaterialButton;
  * create an instance of this fragment.
  */
 public class EmailFragment extends Fragment {
+
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.signupformfragments.extra.Email";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -64,12 +69,16 @@ public class EmailFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_email, container, false);
         MaterialButton button = (MaterialButton) view.findViewById(R.id.continue_button_my_email);
+        TextInputLayout emailInput = view.findViewById(R.id.email);
+        String email =emailInput.getEditText().getText().toString();
+        getActivity().getIntent().putExtra(EXTRA_MESSAGE, email);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 swapFragment();
             }
+
         });
 
         // Inflate the layout for this fragment

@@ -58,6 +58,7 @@
             android:src="@drawable/ic_location_on_black_24dp"
             app:strokeColor="@color/profile_text_color"/>
 
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/miles_away"
             android:layout_width="wrap_content"
@@ -68,6 +69,17 @@
             android:text="12 miles away"
             android:layout_marginLeft="30dp"
             android:textSize="20sp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/location_icon"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="text"
+            android:layout_marginLeft="30dp"
+            android:textSize="30sp"/>
 
 
 
